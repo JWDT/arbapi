@@ -4,7 +4,7 @@ import importlib.util
 app = Flask(__name__)
 
 
-@app.route('/<path:path>')
+@app.route('/<path:path>', methods=['GET', 'POST', 'PUT', 'DELETE'])
 def arbitrary_api(path):
     module_name = path.split('/')[-1]
     try:
